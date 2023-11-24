@@ -5,14 +5,14 @@ let repeller;
 let attractor;
 
 function setup() {
-  createCanvas(640, 640);
-  emitter = new Emitter(width / 2, 20);
-  repeller = new Repeller(width / 2, 200);
-  attractor = new Attractor(320, height/2);
+  createCanvas(400, 400);
+  emitter = new Emitter(width / 2, height / 2);
+  repeller = new Repeller(width / 2, 300);
+  attractor = new Attractor(width /2, height / 2);
 }
 
 function draw() {
-  background(255);
+  background(220);
  
   
   emitter.addParticle();
@@ -20,8 +20,8 @@ function draw() {
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
 
-  attractor.position.x = mouseY;
-  attractor.position.y = mouseX;
+  attractor.position.x = mouseY/2;
+  attractor.position.y = mouseX/2;
 
   emitter.applyRepeller(repeller);
   emitter.applyAttractor(attractor);
