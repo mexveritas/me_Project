@@ -1,6 +1,7 @@
 class Attractor {
   constructor(x, y) {
     this.position = createVector(x, y);
+
     this.power = 50;
   }
 
