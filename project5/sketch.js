@@ -1,4 +1,4 @@
-let emitter;
+let emitters = [];
 let repellers = [];
 let attractors = [];
 
@@ -18,7 +18,6 @@ function setup() {
 
 function draw() {
   background(220);
- 
   emitter.addParticle();
 
   let gravity = createVector(0, 0.001);
@@ -35,5 +34,10 @@ function draw() {
   }
 
   emitter.run();
+}
 
+function mouseClicked() {
+  let mpos = createVector(mouseX, mouseY);
+  let s = new ParticleSystem(mpos);
+  systems.push(s);
 }
