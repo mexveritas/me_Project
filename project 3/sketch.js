@@ -1,14 +1,20 @@
 let emitter;
 
-let repeller;
+let repellers = [];
 
-let attractor;
+let attractors = [];
 
 function setup() {
   createCanvas(400, 400);
   emitter = new Emitter(width / 2, height / 2);
-  repeller = new Repeller(width / 2, 300);
-  attractor = new Attractor(width /2 , height/2);
+
+  for (let i = 0; i < 10; i++) {
+  repellers.push(new Repeller(random(width), random(height)));
+  }
+
+  for (let i = 0; i < 10; i++) {
+    attractors.push(new Attractor(random(width), random(height)));
+    }
 }
 
 
@@ -23,13 +29,19 @@ function draw() {
   // repeller.position.x = mouseY;
   // repeller.position.y = mouseX;
   
-  attractor.position.x = mouseX;
-  attractor.position.y = mouseY;
+  // attractor.position.x = mouseX;
+  // attractor.position.y = mouseY;
 
-  emitter.applyRepeller(repeller);
-  emitter.applyAttractor(attractor);
+  for (let repeller of repellers) {
+    emitter.applyRepeller(repeller);
+    repeller.show();
+  }
+
+  for (let attractor of attractors) {
+    emitter.applyAttractor(attractor);
+    attractor.show();
+  }
+
   emitter.run();
 
-  repeller.show();
-  attractor.show();
 }
