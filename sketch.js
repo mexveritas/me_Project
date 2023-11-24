@@ -17,8 +17,8 @@ function draw() {
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
 
-  repeller.position.x = mouseX;
-  repeller.position.y = mouseY;
+  repeller.position.x = mouseY;
+  repeller.position.y = mouseX;
 
   emitter.applyRepeller(repeller);
   emitter.run();
