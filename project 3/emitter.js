@@ -6,8 +6,10 @@ class Emitter {
   }
 
   addParticle() {
-    this.particles.push(new Particle(this.origin.x, this.origin.y));
+    if (frameCount % 3 === 0) {
+      this.particles.push(new Particle(this.origin.x, this.origin.y));
   }
+}
 
   applyForce(force) {
     for (let particle of this.particles) {

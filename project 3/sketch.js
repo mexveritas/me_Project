@@ -8,11 +8,11 @@ function setup() {
   createCanvas(400, 400);
   emitter = new Emitter(width / 2, height / 2);
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
   repellers.push(new Repeller(random(width), random(height)));
   }
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     attractors.push(new Attractor(random(width), random(height)));
     }
 }
