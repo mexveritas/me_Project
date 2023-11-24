@@ -18,7 +18,7 @@ function draw() {
   background(220);
   
   fill(0, 100, 0);
-  nostroke();
+  strokeWeight(0);
   rect(50, 200, 300, 50);
  
   emitter.addParticle();
