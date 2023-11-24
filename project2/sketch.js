@@ -18,11 +18,12 @@ function draw() {
   background(220);
   
   fill(0, 100, 0);
+  nostroke();
   rect(50, 200, 300, 50);
  
   emitter.addParticle();
 
-  let gravity = createVector(0, 0.1);
+  let gravity = createVector(0, 0.001);
   emitter.applyForce(gravity);
   
   // repeller.position.x = mouseY;
