@@ -2,15 +2,15 @@ class Attractor {
   constructor(x, y) {
     this.position = createVector(x, y);
 
-    this.power = 150;
+    this.power = 50;
   }
 
 
   show() {
     stroke(0);
     strokeWeight(2);
-    fill(200, 130, 50);
-    circle(this.position.x, this.position.y, 50);
+    fill(0, 130, 50);
+    circle(this.position.x, this.position.y, 30);
   }
 
   attract(particle) {

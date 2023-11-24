@@ -8,11 +8,11 @@ function setup() {
   createCanvas(400, 400);
   emitter = new Emitter(width / 2, height / 2);
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 6; i++) {
   repellers.push(new Repeller(random(width), random(height)));
   }
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 6; i++) {
     attractors.push(new Attractor(random(width), random(height)));
     }
 }
@@ -23,7 +23,7 @@ function draw() {
  
   emitter.addParticle();
 
-  let gravity = createVector(0, 0.1);
+  let gravity = createVector(0, 0.001);
   emitter.applyForce(gravity);
   
   // repeller.position.x = mouseY;
