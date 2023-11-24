@@ -26,22 +26,22 @@ class Particle {
 
   checkEdge() {
     if (this.position.y > height - 2) {
-      this.velocity.y = this.velocity.y * -1;
+      this.velocity.y = this.velocity.y * -0.8;
       this.position.y = height - 2;
     }
 
     if (this.position.y < 0) {
-      this.velocity.y = this.velocity.y * -1;
+      this.velocity.y = this.velocity.y * -0.8;
       this.position.y = 0 + 2;
     }
 
     if (this.position.x < 0) {
-      this.velocity.x = this.velocity.x * -1;
+      this.velocity.x = this.velocity.x * -0.8;
       this.position.x = 0 + 2;
     }
 
     if (this.position.x > width) {
-      this.velocity.x = this.velocity.x * -1;
+      this.velocity.x = this.velocity.x * -0.8;
       this.position.x = width -2;
     }
   }

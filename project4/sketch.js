@@ -6,7 +6,7 @@ let attractor;
 
 function setup() {
   createCanvas(400, 400);
-  emitter = new Emitter(width / 2, 50);
+  emitter = new Emitter(width / 2, 200);
   repeller = new Repeller(100, height / 2);
   attractor = new Attractor(300, height / 2);
 }
