@@ -12,7 +12,7 @@ class Attractor {
     circle(this.position.x, this.position.y, 50);
   }
 
-  repel(particle) {
+  attract(particle) {
  
     let force = p5.Vector.sub(this.position, particle.position);
     let distance = force.mag();
