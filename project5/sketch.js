@@ -33,11 +33,14 @@ function draw() {
     attractor.show();
   }
 
-  emitter.run();
+  for (let emitter of emitters) {
+    emitter.addParticle();
+    emitter.run();
+  }
 }
 
 function mouseClicked() {
   let mpos = createVector(mouseX, mouseY);
-  let s = new ParticleSystem(mpos);
-  systems.push(s);
+  let newEmitter = new Emitter(mpos.x, mpos.y);
+  emitters.push(newEmitter);
 }
