@@ -6,7 +6,7 @@ let attractor;
 
 function setup() {
   createCanvas(400, 400);
-  emitter = new Emitter(width / 2, height / 2);
+  emitter = new Emitter(width / 2, 50);
   repeller = new Repeller(100, height / 2);
   attractor = new Attractor(300, height / 2);
 }
@@ -28,10 +28,10 @@ function draw() {
   attractor.show();
 
   if (keyIsDown(UP_ARROW)) {
-    attractor.power += 2;
+    attractor.power += 5;
   }
 
   if (keyIsDown(DOWN_ARROW)) {
-    attractor.power -= 2;
+    attractor.power -= 5;
   }
 }
