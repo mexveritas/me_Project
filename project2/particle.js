@@ -31,6 +31,18 @@ class Particle {
       this.velocity.y = this.velocity.y * -1;
       this.position.y = height - 8;
     }
+
+    if (
+      this.position.x > 50 -4 &&
+      this.position.x < 50 + 300 -4 &&
+      this.position.y > 200 - 4 &&
+      this.position.y < 200 + 50
+    ) {
+
+      this.velocity.y = this.velocity.y * -1;
+      this.position.y = 200;
+    }
+    
     
     if (this.position.x > width) {
       this.velocity.x = this.velocity.x * -1;
@@ -45,7 +57,7 @@ class Particle {
   // Method to display
   show() {
     stroke(0, this.lifespan);
-    strokeWeight(2);
+    strokeWeight(1);
     fill(127, this.lifespan);
     circle(this.position.x, this.position.y, 8);
   }

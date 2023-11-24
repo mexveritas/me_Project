@@ -17,7 +17,7 @@ function setup() {
 function draw() {
   background(220);
   
-  fill(150, 100, 100);
+  fill(0, 100, 0);
   rect(50, 200, 300, 50);
  
   emitter.addParticle();
