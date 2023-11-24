@@ -15,13 +15,14 @@ function setup() {
     }
 }
 
-
 function draw() {
   background(220);
-  emitter.addParticle();
 
-  let gravity = createVector(0, 0.001);
-  emitter.applyForce(gravity);
+  for (let emitter of emitters) {
+    emitter.addParticle();
+    let gravity = createVector(0, 1);
+    emitter.applyForce(gravity);
+  }
 
   for (let repeller of repellers) {
     emitter.applyRepeller(repeller);
@@ -33,10 +34,6 @@ function draw() {
     attractor.show();
   }
 
-  for (let emitter of emitters) {
-    emitter.addParticle();
-    emitter.run();
-  }
 }
 
 function mouseClicked() {
