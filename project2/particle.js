@@ -15,7 +15,6 @@ class Particle {
     this.acceleration.add(f);
   }
 
-  // Method to update position
   update() {
     this.checkEdge();
     

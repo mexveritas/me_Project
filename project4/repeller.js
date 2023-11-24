@@ -2,14 +2,14 @@ class Repeller {
   constructor(x, y) {
     this.position = createVector(x, y);
 
-    this.power = 150;
+    this.power = 50;
   }
   
   show() {
     stroke(0);
     strokeWeight(2);
-    fill(127);
-    circle(this.position.x, this.position.y, 32);
+    fill(0, 200, 0);
+    circle(this.position.x, this.position.y, 40);
   }
 
   repel(particle) {
