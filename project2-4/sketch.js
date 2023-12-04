@@ -1,4 +1,9 @@
-// GUI
+let emitter;
+
+let repeller;
+
+let attractor;
+
 let pSlider, nSlider;
 
 let tValue = 10;
@@ -8,10 +13,10 @@ let tValueStep = 2;
 let gui;
 
 let params = {
-  attractorSize : 50,
-  Min : 0,
-  Max : 200,
-  Step : 1,
+  testValue : 10,
+  testValueMin : 0,
+  testValueMax : 50,
+  testValueStep : 2,
   move : 1,
   moveMin : 0,
   moveMax : 10,
@@ -20,22 +25,12 @@ let params = {
   tChoice : ['apple', 'banana', 'mango']
 }
 
-// One ParticleSystem
-let emitter;
-
-//{!1} One repeller
-let repeller;
-let att;
-
 function setup() {
-  createCanvas(300, 300);
-  emitter = new Emitter(width / 2, height/2);
-  repeller = new Repeller(width / 2, 350);
-  att = new Attractor(20, height/2);
-  
+  createCanvas(400, 400);
+
   pSlider = createSlider(0, 500, 100);
   pSlider.position(10, 320);
-  nSlider = createSlider(0, 10, 5);
+  nSlider = createSlider(0, 100, 0);
   nSlider.position(10, 340);
   
   gui = createGui('test slider');
@@ -44,27 +39,37 @@ function setup() {
   
   gui.addObject(params);
   gui.setPosition(310, 10);
+  emitter = new Emitter(width / 2, height / 2);
+  repeller = new Repeller(width / 2, 300);
+  attractor = new Attractor(width /2 , height/2);
 }
 
+
 function draw() {
-  background(255);
-    
+  background(220);
+
   repeller.setPower(params.testValue);
   repeller.move(params.move);
   
   for (let i=0; i<nSlider.value(); i++) {
     emitter.addParticle(params.tColor);  
   }
-  
-  
-  // We’re applying a universal gravity.
+ 
+  emitter.addParticle();
+
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
-  //{!1} Applying the repeller
+  
+  // repeller.position.x = mouseY;
+  // repeller.position.y = mouseX;
+  
+  attractor.position.x = mouseX;
+  attractor.position.y = mouseY;
+
   emitter.applyRepeller(repeller);
-  emitter.applyAttractor(att);
+  emitter.applyAttractor(attractor);
   emitter.run();
 
   repeller.show();
-  att.show();
+  attractor.show();
 }

@@ -4,7 +4,6 @@ class Particle {
     this.velocity = createVector(random(-1, 1), random(-1, 0));
     this.acceleration = createVector(0, 0);
     this.lifespan = 255.0;
-    this.c = color(0);
   }
 
   run() {
@@ -20,16 +19,16 @@ class Particle {
   update() {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
-    this.lifespan -= 7;
+    this.lifespan -= 2;
     this.acceleration.mult(0);
   }
 
   // Method to display
   show() {
-    stroke(this.c, this.lifespan);
+    stroke(0, this.lifespan);
     strokeWeight(2);
-    fill(this.c, this.lifespan);
-    circle(this.position.x, this.position.y, 1);
+    fill(127, this.lifespan);
+    circle(this.position.x, this.position.y, 8);
   }
 
   // Is the particle still useful?
