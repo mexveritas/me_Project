@@ -1,3 +1,4 @@
+//{!1} The Emitter manages all the particles.
 class Emitter {
 
   constructor(x, y) {
@@ -5,30 +6,31 @@ class Emitter {
     this.particles = [];
   }
 
-  addParticle() {
-    if (frameCount % 3 === 0) {
-      this.particles.push(new Particle(this.origin.x, this.origin.y));
+  addParticle(aColor) {
+    let p = new Particle(this.origin.x, this.origin.y);
+    p.c = color(aColor);
+    this.particles.push(p);
   }
-}
 
   applyForce(force) {
+    //{!3} Applying a force as a p5.Vector
     for (let particle of this.particles) {
       particle.applyForce(force);
     }
   }
 
   applyRepeller(repeller) {
-    
+    //{!4} Calculating a force for each Particle based on a Repeller
     for (let particle of this.particles) {
       let force = repeller.repel(particle);
       particle.applyForce(force);
     }
   }
   
-   applyAttractor(attractor) {
-    
+  applyAttractor(attractor) {
+    //{!4} Calculating a force for each Particle based on a Repeller
     for (let particle of this.particles) {
-      let force = attractor.attract(particle);
+      let force = attractor.pull(particle);
       particle.applyForce(force);
     }
   }
