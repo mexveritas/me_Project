@@ -3,14 +3,14 @@ let pSlider, nSlider;
 
 let tValue = 10;
 let tValueMin = 0;
-let tValueMax = 100;
+let tValueMax = 50;
 let tValueStep = 2;
 let gui;
 
 let params = {
   testValue : 10,
   testValueMin : 0,
-  testValueMax : 500,
+  testValueMax : 50,
   testValueStep : 2,
   move : 1,
   moveMin : 0,
@@ -35,7 +35,7 @@ function setup() {
   
   pSlider = createSlider(0, 500, 100);
   pSlider.position(10, 320);
-  nSlider = createSlider(0, 100, 0);
+  nSlider = createSlider(0, 10, 5);
   nSlider.position(10, 340);
   
   gui = createGui('test slider');

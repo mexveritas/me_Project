@@ -1,11 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
-
-// Simple Particle System
-
-// A simple Particle class
-
 class Particle {
   constructor(x, y) {
     this.position = createVector(x, y);
@@ -28,7 +20,7 @@ class Particle {
   update() {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
-    this.lifespan -= 2;
+    this.lifespan -= 4;
     this.acceleration.mult(0);
   }
 
