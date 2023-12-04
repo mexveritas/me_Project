@@ -24,9 +24,9 @@ function setup() {
 
 function draw() {
 
-  const r = rSlider.value();
+  const particleSize = rSlider.value();
 
-  background(r);
+  background(particleSize);
   text('alpha', rSlider.x * 2 + rSlider.width, 35);
  
   emitter.addParticle();
@@ -45,5 +45,5 @@ function draw() {
   emitter.run();
 
   repeller.show();
-  attractor.show();
+  attractor.show(particleSize);
 }

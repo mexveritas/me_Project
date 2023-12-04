@@ -24,11 +24,12 @@ class Particle {
   }
 
   // Method to display
-  show() {
+  show(particleSize) {
     stroke(0, this.lifespan);
     strokeWeight(2);
     fill(127, this.lifespan);
-    circle(this.position.x, this.position.y, 8);
+    const size = particleSize || 8;
+    circle(this.position.x, this.position.y, size);
   }
 
   // Is the particle still useful?
