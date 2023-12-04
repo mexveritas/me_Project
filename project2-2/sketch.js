@@ -4,18 +4,8 @@ let repeller;
 
 let attractor;
 
-let Slider;
-
 function setup() {
   createCanvas(400, 400);
-
-  textSize(15);
-  noStroke();
-
-  // create sliders
-  Slider = createSlider(0, 255, 50);
-  Slider.position(20, 20);
-
   emitter = new Emitter(width / 2, height / 2);
   repeller = new Repeller(width / 2, 300);
   attractor = new Attractor(width /2 , height/2);
@@ -23,10 +13,7 @@ function setup() {
 
 
 function draw() {
-  background(255);
-  const particleSize = Slider.value();
-  
-  text('particle size', Slider.x * 2 + Slider.width, 35);
+  background(220);
  
   emitter.addParticle();
 
@@ -44,5 +31,5 @@ function draw() {
   emitter.run();
 
   repeller.show();
-  attractor.show(particleSize);
+  attractor.show();
 }

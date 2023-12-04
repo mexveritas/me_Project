@@ -1,6 +1,6 @@
 class Emitter {
 
-  constructor(x, y, size) {
+  constructor(x, y) {
     this.origin = createVector(x, y);
     this.particles = [];
   }
