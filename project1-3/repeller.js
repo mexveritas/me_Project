@@ -7,7 +7,7 @@ class Repeller {
   
   show() {
     stroke(0);
-    strokeWeight(2);
+    strokeWeight(0);
     fill(0, 100, 250);
     circle(this.position.x, this.position.y, 32);
   }
