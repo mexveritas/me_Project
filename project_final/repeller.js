@@ -1,8 +1,9 @@
 class Repeller {
-  constructor(x, y) {
+  constructor(x, y, power) {
     this.position = createVector(x, y);
 
     this.power = 150;
+    this.power = power;
   }
   
   show() {

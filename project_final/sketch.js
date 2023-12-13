@@ -14,8 +14,8 @@ function setup() {
   repeller = new Repeller(width / 2, 400);
   attractor = new Attractor(width /2 , height/2);
   
-  gui = QuickSettings.create(10,10,'My Gui');
-  gui.addRange('size', 1,100,1,1);
+  gui = QuickSettings.create(10,150,'My Gui');
+  gui.addRange('reppower', 1,50,1,1);
   gui.addRange('attpower', 1,200,1,1);
 }
 
@@ -30,6 +30,7 @@ function draw() {
   
   attractor.position.x = mouseX;
   attractor.position.y = mouseY;
+  repeller.power = gui.getRangeValue('reppower');
   attractor.power = gui.getRangeValue('attpower');
 
   emitter.applyRepeller(repeller);
