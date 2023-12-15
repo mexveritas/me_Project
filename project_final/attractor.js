@@ -1,16 +1,17 @@
 class Attractor {
-  constructor(x, y, power) {
+  constructor(x, y, power, alpha) {
     this.position = createVector(x, y);
 
     this.power = 150;
     this.power = power;
+    this.alpha = alpha;
   }
 
 
   show() {
     stroke(0);
     strokeWeight(2);
-    fill(200, 130, 50);
+    fill(200, 130, 50, this.alpha);
     circle(this.position.x, this.position.y, 50);
   }
 
@@ -24,3 +25,5 @@ class Attractor {
     return force;
   }
 }
+
+
