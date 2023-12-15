@@ -24,6 +24,28 @@ class Particle {
     this.acceleration.mult(0);
   }
 
+  checkEdge() {
+    if (this.position.y > height) {
+      this.velocity.y = this.velocity.y * -1;
+      this.position.y = height;
+    }
+
+    if (this.position.y < 0) {
+      this.velocity.y = this.velocity.y * -1;
+      this.position.y = 0;
+    }
+
+    if (this.position.x < 0) {
+      this.velocity.x = this.velocity.x * -1;
+      this.position.x = 0;
+    }
+
+    if (this.position.x > width) {
+      this.velocity.x = this.velocity.x * -1;
+      this.position.x = width;
+    }
+  }
+
   // Method to display
   show() {
     stroke(0, this.lifespan);

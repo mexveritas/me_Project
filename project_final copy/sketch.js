@@ -56,4 +56,9 @@ function draw() {
   }
 
   emitter.run();
+
+  for (let i = emitter.particles.length - 1; i >= 0; i--) {
+    let particle = emitter.particles[i];
+    particle.checkEdge();
+  }
 }
