@@ -7,11 +7,15 @@ class Attractor {
     this.alpha = alpha;
   }
 
+  setSize(size) {
+    this.size = size;
+  }
+
   show() {
     stroke(0);
     strokeWeight(0);
     fill(200, 0, 0, this.alpha);
-    circle(this.position.x, this.position.y, 20);
+    circle(this.position.x, this.position.y, this.size);
   }
 
   attract(particle) {
