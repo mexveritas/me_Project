@@ -10,7 +10,7 @@ class Attractor {
 
   show() {
     stroke(0);
-    strokeWeight(2);
+    strokeWeight(0);
     fill(200, 130, 50, this.alpha);
     circle(this.position.x, this.position.y, 50);
   }

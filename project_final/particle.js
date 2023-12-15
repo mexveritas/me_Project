@@ -4,7 +4,7 @@ class Particle {
     this.velocity = createVector(random(-1, 1), random(-1, 0));
     this.acceleration = createVector(0, 0);
     this.lifespan = 255.0;
-    this.size = 8;
+    this.size = 4;
   }
 
   run() {
@@ -27,8 +27,8 @@ class Particle {
   // Method to display
   show() {
     stroke(0, this.lifespan);
-    strokeWeight(2);
-    fill(127, this.lifespan);
+    strokeWeight(0);
+    fill(0, this.lifespan);
     circle(this.position.x, this.position.y, this.size);
   }
 

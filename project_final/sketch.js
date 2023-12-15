@@ -9,14 +9,14 @@ var gui;
 var guis = [];
 
 function setup() {
-  createCanvas(100, 600);
+  createCanvas(600, 100);
   emitter = new Emitter (width/ 2, height / 2);
-  repeller = new Repeller(width / 2, 400);
-  attractor = new Attractor(width /2 , height/2, 150);
+  repeller = new Repeller(width / 2, 100);
+  attractor = new Attractor(width /2 , height/2, 500);
   
   gui = QuickSettings.create(10,150,'My Gui');
-  gui.addRange('reppower', 1,50,1,1);
-  gui.addRange('attpower', 1,200,1,1);
+  gui.addRange('reppower', 1,300,1,1);
+  gui.addRange('attpower', 1,300,1,1);
   gui.addRange('attalpha', 0,255,1,attractor.alpha);
 }
 
