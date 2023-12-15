@@ -1,16 +1,17 @@
 class Repeller {
-  constructor(x, y, power) {
+  constructor(x, y, power, alpha) {
     this.position = createVector(x, y);
 
     this.power = 150;
     this.power = power;
+    this.alpha = alpha;
   }
   
   show() {
     stroke(0);
     strokeWeight(0);
-    fill(0, 0, 200);
-    circle(this.position.x, this.position.y, 49);
+    fill(0, 0, 200, this.alpha);
+    circle(this.position.x, this.position.y, 20);
   }
 
   repel(particle) {
