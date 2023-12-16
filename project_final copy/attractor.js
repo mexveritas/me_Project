@@ -2,13 +2,13 @@ class Attractor {
   constructor(x, y, power, alpha) {
     this.position = createVector(x, y);
 
-    this.power = 150;
-    this.power = power;
-    this.alpha = alpha;
+    this.power = power || 150;
+    this.alpha = alpha || 200;
+    this.setSize();
   }
 
   setSize(size) {
-    this.size = size;
+    this.size = size || map(this.power, 1, 200, 5, 50);
   }
 
   show() {
