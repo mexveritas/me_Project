@@ -3,7 +3,7 @@ class Attractor {
     this.position = createVector(x, y);
 
     this.power = power || 150;
-    this.alpha = alpha || 200;
+    this.alpha = alpha;
     this.setSize();
   }
 
@@ -15,6 +15,7 @@ class Attractor {
     stroke(0);
     strokeWeight(0);
     fill(200, 0, 0, this.alpha);
+    
     circle(this.position.x, this.position.y, this.size);
   }
 

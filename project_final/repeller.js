@@ -4,7 +4,8 @@ class Repeller {
 
     this.power = 150;
     this.power = power || 150;
-    this.alpha = alpha || 200;
+    this.alpha = alpha;
+    this.setSize();
   }
 
   setSize(size) {
