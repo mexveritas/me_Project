@@ -2,9 +2,11 @@ let emitter;
 
 let repeller;
 let repellers = [];
+let repellerSize = 20;
 
 let attractor;
 let attractors = [];
+let attractorSize = 20;
 
 
 var gui;
@@ -86,7 +88,25 @@ function draw() {
   strokeWeight(0);
   rect(50, 100, 100, 100);
 
+  if (keyIsDown(UP_ARROW)) {
+    repellerSize += 1;
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    repellerSize -= 1;
+  }
+  for (let repeller of repellers) {
+    repeller.setSize(repellerSize);
+  }
 
+  if (keyIsDown(LEFT_ARROW)) {
+    attractorSize += 1;
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    attractorSize -= 1;
+  }
+  for (let attractor of attractors) {
+    attractor.setSize(attractorSize);
+  }
   
 
   }

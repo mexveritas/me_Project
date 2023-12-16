@@ -3,15 +3,19 @@ class Repeller {
     this.position = createVector(x, y);
 
     this.power = 150;
-    this.power = power;
-    this.alpha = alpha;
+    this.power = power || 150;
+    this.alpha = alpha || 200;
+  }
+
+  setSize(size) {
+    this.size = size || map(this.power, 1, 200, 5, 50);
   }
   
   show() {
     stroke(0);
     strokeWeight(0);
     fill(0, 0, 200, this.alpha);
-    circle(this.position.x, this.position.y, 20);
+    circle(this.position.x, this.position.y, this.size);
   }
 
   repel(particle) {
