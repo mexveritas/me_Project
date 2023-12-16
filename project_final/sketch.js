@@ -29,10 +29,11 @@ function setup() {
       
   
   gui = QuickSettings.create(10,150,'My Gui');
-  gui.addRange('reppower', 1,200,100,0.5);
-  gui.addRange('attpower', 1,200,100,0.5);
-  gui.addRange('attalpha', 0,255,200,attractor.alpha);
-  gui.addRange('repalpha', 0,255,200,repellers[0].alpha);
+  gui.addRange('positive_power', 1,200,100,0.5);
+  gui.addRange('positive_alpha', 0,255,200,repellers[0].alpha)
+  gui.addRange('negative_power', 1,200,100,0.5);
+  gui.addRange('negative_alpha', 0,255,200,attractor.alpha);
+  ;
 }
 
 
@@ -51,14 +52,14 @@ function draw() {
   attractor.position.y = mouseY;
 
   for (let repeller of repellers) {
-  repeller.power = gui.getRangeValue('reppower');
-  repeller.alpha = gui.getRangeValue('repalpha');
+  repeller.power = gui.getRangeValue('positive_power');
+  repeller.alpha = gui.getRangeValue('positive_alpha');
   emitter.applyRepeller(repeller);
   repeller.show();
   }
   for (let attractor of attractors) {
-  attractor.power = gui.getRangeValue('attpower');
-  attractor.alpha = gui.getRangeValue('attalpha');
+  attractor.power = gui.getRangeValue('negative_power');
+  attractor.alpha = gui.getRangeValue('negative_alpha');
 
   emitter.applyAttractor(attractor);
   attractor.show();
