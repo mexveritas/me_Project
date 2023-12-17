@@ -12,6 +12,27 @@ let attractorSize = 20;
 var gui;
 var guis = [];
 
+function keyPressed() {
+  if (keyCode === 32) { 
+    redrawCanvas();
+  }
+}
+
+function redrawCanvas() {
+ 
+  emitter = new Emitter(width / 2, height / 2);
+ 
+  for (let i = 0; i < 30; i++) {
+    repellers[i] = new Repeller(random(width), random(height));
+  }
+
+  for (let i = 0; i < 30; i++) {
+    attractors[i] = new Attractor(random(width), random(height));
+  }
+
+  attractor = attractors[0];
+}
+
 function setup() {
   createCanvas(400, 400);
   emitter = new Emitter (width/ 2, height / 2);
@@ -33,6 +54,8 @@ function setup() {
   gui.addRange('positive_alpha', 0,255,200,repellers[0].alpha)
   gui.addRange('negative_power', 1,200,100,0.5);
   gui.addRange('negative_alpha', 0,255,200,attractor.alpha);
+
+  document.addEventListener('keydown', keyPressed);
   ;
 }
 
@@ -40,9 +63,7 @@ function setup() {
 function draw() {
   
   background(255);
-  
-  
- 
+
   emitter.addParticle();
 
   let gravity = createVector(0, 0);
